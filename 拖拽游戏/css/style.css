@@ -1,0 +1,169 @@
+body,p,div,span,h1,h2,h3,h4,h5,h6,ul,li,dl,dt,img{margin:0;padding:0}
+img{vertical-align: middle;border:none;outline:none;}
+body{background:url("../images-new/game-bg.jpg") center top no-repeat;;height:1200px;}
+.container{width:1100px;height:900px;position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;margin-top:0;}
+.menus1,.menus2,.menus3{width:100%;height:180px;margin-left:auto;margin-right:auto;position:absolute;-webkit-animation-duration:.7s;}
+/*.menus1{top:60px;}
+.menus2{top:242px}
+.menus3{top:417px;}*/
+.drag,.status{width:124px;height:128px;position:absolute;z-index:100;}
+.drag{cursor:move;-webkit-animation-name: bounceIn;}
+
+/*.drag:hover{
+  -webkit-animation-name: jello;
+  animation-name: jello;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-animation-delay:0s;
+  -webkit-animation-duration:.8s
+}*/
+
+/*入选钩，不同类型图标*/
+.status{font-size:30px;color:green;text-align:center;line-height:155px;z-index:50;background:url("../images-new/hook.png") no-repeat!important;text-indent:-9999em;display: none;}
+#dragtarget1,.on1{left:186px;top:98px;background:url("../images-new/step1.png") no-repeat;}
+#dragtarget2,.on2{left:381px;top:98px;background:url("../images-new/step2.png") no-repeat;}
+#dragtarget3,.on3{left:569px;top:98px;background:url("../images-new/step3.png") no-repeat;}
+#dragtarget4,.on4{left:776px;;top:98px;background:url("../images-new/step4.png") no-repeat;}
+#dragtarget5,.on5{left:87px;top:275px;background:url("../images-new/step5.png") no-repeat;}
+#dragtarget6,.on6{left:277px;top:275px;background:url("../images-new/step6.png") no-repeat;}
+#dragtarget7,.on7{left:473px;top:275px;background:url("../images-new/step7.png") no-repeat;}
+#dragtarget8,.on8{left:667px;top:275px;background:url("../images-new/step8.png") no-repeat;}
+#dragtarget9,.on9{left:869px;top:275px;background:url("../images-new/step9.png") no-repeat;}
+#dragtarget10,.on10{left:177px;top:451px;background:url("../images-new/step10.png") no-repeat;}
+#dragtarget11,.on11{left:374px;top:451px;background:url("../images-new/step11.png") no-repeat;}
+#dragtarget12,.on12{left:572px;top:451px;background:url("../images-new/step12.png") no-repeat;}
+#dragtarget13,.on13{left:767px;top:451px;background:url("../images-new/step13.png") no-repeat;}
+/*#dropA{background:url(../images-new/box-sprite.png) -1px -3px no-repeat;}
+#dropB{background:url(../images-new/box-sprite.png) -338px -7px no-repeat;}
+#dropC{background:url(../images-new/box-sprite.png) -683px -3px no-repeat;}*/
+
+/*宝盒*/
+.dropTarget{width:812px;position:absolute;top:582px;left:166px;overflow:hidden;}
+.dropTarget .dropBox{width:260px;height:270px;float:left;position:relative;}
+#dropA{background:url(../images-new/box-sprite.png) -24px 37px no-repeat;}
+#dropB{background:url(../images-new/box-sprite.png) -283px 36px no-repeat;}
+#dropC{background:url(../images-new/box-sprite.png) -543px 36px no-repeat;}
+#dropA span,#dropB span,#dropC span{display:block;text-indent:10px;;color:#fff;font:bold 14px/28px "微软雅黑";width:33px;height:31px;background:url(../images-new/round.png) no-repeat;position:absolute;display:none;cursor:pointer;}
+#dropA span{right:46px;top:83px;}
+#dropB span{right:56px;top:81px;}
+#dropC span{right:67px;top:82px;}
+
+/*当回到原位时，给予的颜色状态*/
+.dropA#dragtarget1{background:url(../images-new/gd1.png) no-repeat;}
+.dropA#dragtarget2{background:url(../images-new/gd2.png) no-repeat;}
+.dropA#dragtarget3{background:url(../images-new/gd3.png) no-repeat;}
+.dropA#dragtarget4{background:url(../images-new/gd4.png) no-repeat;}
+.dropA#dragtarget6{background:url(../images-new/gd5.png) no-repeat;}
+.dropA#dragtarget7{background:url(../images-new/gd6.png) no-repeat;}
+
+.dropB#dragtarget5{background:url(../images-new/hh1.png) no-repeat;}
+.dropB#dragtarget10{background:url(../images-new/hh2.png) no-repeat;}
+.dropB#dragtarget12{background:url(../images-new/hh3.png) no-repeat;}
+
+.dropC#dragtarget8{background:url(../images-new/bd1.png) no-repeat;}
+.dropC#dragtarget9{background:url(../images-new/bd2.png) no-repeat;}
+.dropC#dragtarget11{background:url(../images-new/bd3.png) no-repeat;}
+.dropC#dragtarget13{background:url(../images-new/bd4.png) no-repeat;}
+
+/*报错弹窗*/
+.errorBox{width:365px;height:134px;background: url(../images-new/error.png) no-repeat;position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;z-index:9999;margin-top:300px;display: none;}
+.errorBox span{width:42px;height:42px;position:absolute;right:0;top:0;background: url(../images-new/close.png) no-repeat;cursor: pointer;-webkit-transition:all .5s ease 0s;z-index:9999;}
+.errorBox span:hover{-webkit-transform: scale(1.1,1.1);transform: scale(1.1,1.1);-webkit-transition-duration:.1s}
+
+.custom-animate{
+-webkit-animation-duration: .1s;
+-webkit-animation-iteration-count: 4;
+}
+.custom-animate-fadeInUp{
+  -webkit-animation-delay:.7s;
+
+}
+
+/*.custom-delay1{
+  -webkit-animation-delay:.2s;
+}
+.custom-delay2{
+  -webkit-animation-delay:.4s;
+}
+.custom-delay3{
+  -webkit-animation-delay:.6s;
+}*/
+.custom-delay1{
+  -webkit-animation-delay:.2s;
+}
+.custom-delay2{
+  -webkit-animation-delay:.3s;
+}
+.custom-delay3{
+  -webkit-animation-delay:.4s;
+}
+.custom-delay4{
+  -webkit-animation-delay:.5s;
+}
+.custom-delay5{
+  -webkit-animation-delay:.6s;
+}
+.custom-delay6{
+  -webkit-animation-delay:.7s;
+}
+.custom-delay7{
+  -webkit-animation-delay:.8s;
+}
+.custom-delay8{
+  -webkit-animation-delay:.9s;
+}
+.custom-delay9{
+  -webkit-animation-delay:.10s;
+}
+.custom-delay10{
+  -webkit-animation-delay:.11s;
+}
+.custom-delay11{
+  -webkit-animation-delay:.4s;
+}
+.custom-delay13{
+  -webkit-animation-delay:.6s;
+}
+/*改动animate动画属性*/
+.fadeInUp2 {
+  -webkit-animation-name: fadeInUp2;
+  animation-name: fadeInUp2;
+}
+@-webkit-keyframes fadeInUp2 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 30%, 0);
+    transform: translate3d(0, 30%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInDown2 {
+  -webkit-animation-name: fadeInDown2;
+  animation-name: fadeInDown2;
+}
+
+@-webkit-keyframes fadeInDown2 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+
+/*错误提示*/
+.fastZoomIndown{
+  -webkit-animation-duration:.2s;
+}
