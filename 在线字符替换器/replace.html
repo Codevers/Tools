@@ -1,13 +1,49 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- saved from url=(0054)http://media.njude.com.cn/pub/ZF_CPS/tool/replace.html -->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>在线字符转换器</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="lib/bootstrap/css/font-awesome.min.css" />
+    <link rel="icon" href="lib/favicon.ico" type="image/x-icon">
+    <script src="lib/clipboard.min.js"></script>
+    <style>
+        body{font-family: "Microsoft yahei"}
+        .mg{margin:20px 0;}
+
+    </style>
 </head>
 
 <body>
-    <textarea name="" id="text" cols="100" rows="20" style="vertical-align:bottom;text-indent:0;line-height:1.7;"></textarea>
-    <button style="width:80px;height:40px;" id="btn">转换</button>
+<div class="container">
+    <h2>在线字符替换工具</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <textarea id="text" class="form-control" rows="25"></textarea>
+        </div>
+
+        <div class="col-md-12 mg">
+           <div class="col-md-4">
+                <p>
+                <button id="btn" class="btn btn-success btn-block"><i class="fa fa-refresh" aria-hidden="true"></i> 转换</button>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <p>
+                <button id="cut" class="btn btn-info btn-block" data-clipboard-action="cut" data-clipboard-target="#text"><i class="fa fa-scissors" aria-hidden="true"></i> 剪切</button>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <p>
+                 <button id="cut" class="btn btn-info btn-block" data-clipboard-action="copy" data-clipboard-target="#text"><i class="fa fa-files-o" aria-hidden="true"></i> 复制</button>
+                 </p>
+            </div>
+            </p>
+        </div>
+    </div>
+</div>
+   
     <script>
     document.getElementById('btn').onclick = function() {
         var getContent = document.getElementById('text').value;
@@ -15,15 +51,18 @@
                 var n = parseFloat(num);
                 return "百分之" + ChineseNum(n);
             })
-            // .replace(/\d+/g, function(num) {
-            //     return ChineseNum(num)
-            // })
-            .replace(/(?!0+(\.0+)?$)\d+(\.\d+)?/g,function(num){
-            	console.log(num)
+            .replace(/\d+\/\d+/g, function(num){  //匹配分数
+                var n=num.match(/\d+/g).reverse();
+                return ChineseNum(n[0]) + "分之" + ChineseNum(n[1]);
+            })
+            .replace(/(?!0+(\.0+)?$)\d+(\.\d+)?/g, function(num) {
+                console.log(num)
                 return ChineseNum(num)
             })
-            .replace(/，|。|：|、|？|：|．|\./g, '\n')
+            .replace(/，|,|。|：|？|：|:|．|！|\./g, '\n')
+            .replace(/“|”|"|"|;|；|\./g, '')
             .replace(/°|\./g, '度')
+            .replace(/~|-|～|\./gi, '到')
             .replace(/℃|\./g, '摄氏度')
             .replace(/\b(d)\b|\./g, '周')
             .replace(/\b(g)\b|\./gi, '克')
@@ -34,7 +73,8 @@
             .replace(/\b(cm)\b|\./gi, '厘米')
             .replace(/\b(m)\b|\./gi, '米')
             .replace(/\b(km)\b|\./gi, '千米')
-        	.replace(/[\r\n\s\f\t\v\o ]+/gm, "\n") //删除空行
+            .replace(/[\r\n\s\f\t\v]+/gm, "\n") //删除空行
+            .replace(/、|（|）|《|》|\./g, ' '); //此为添加空格，应在删除空行之后
         document.getElementById('text').value = s;
     }
 
@@ -65,16 +105,25 @@
                     break;
             }
             if (k % 4 == 2 && a[0].charAt(i + 2) != 0 && a[0].charAt(i + 1) == 0) re = AA[0] + re;
+            // if (a[0].charAt(i) != 0) re = AA[a[0].charAt(i)] + BB[k % 4] + re;
+            // 在十位数情况下，取消多余的一
+            // if (a.length <=2 && a[0].charAt(i)==1) {
+            //     re = AA[a[0].charAt(i)] + BB[k % 4] + re; //loop1：取十位数最后一个
+            //     res = BB[k % 4] + re; //loop1：取十，不要一
+            // //正常转换，不是十位数的情况下
+            // }else if(a[0].charAt(i) != 0){
+            //     re = AA[a[0].charAt(i)] + BB[k % 4] + re;
+            // }
             if (a[0].charAt(i) != 0) re = AA[a[0].charAt(i)] + BB[k % 4] + re;
             k++;
         }
         //添加：此处判断浮点数和整数，加零
-        if(a[0]=="" && a.length>1){
-        	re += AA[0] + BB[6];
+        if (a[0] == "" && a.length > 1) {
+            re += AA[0] + BB[6];
             for (var i = 0; i < a[1].length; i++) re += AA[a[1].charAt(i)];
             return re;
-        }else if(a.length > 1){
-        	re += BB[6];
+        } else if (a.length > 1) {
+            re += BB[6];
             for (var i = 0; i < a[1].length; i++) re += AA[a[1].charAt(i)];
             return re;
         }
@@ -84,14 +133,19 @@
         //     for (var i = 0; i < a[1].length; i++) re += AA[a[1].charAt(i)];
         // }
         return re;
-        
-    }
 
+    }
     // alert(ChineseNum('15'))
 
+    // 剪切、复制
+    var cut = new Clipboard('#cut');
+    cut.on('success', function(e) {
+        console.log(e)
+    })
+    cut.on('error', function(e) {
+        console.log(e)
+    })
+    </script>
+</body>
 
-</script>
-
-
-
-</body></html>
+</html>
