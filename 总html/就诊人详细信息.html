@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>就诊人详细信息</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="icheck/skins/flat/_all.css"/>
+		<link rel="stylesheet" type="text/css" href="icheck/skins/flat/green.css"/>
+		<style type="text/css">
+			
+			.background{
+				height: calc(100% - 0.96rem);
+				background-color: #f1f9f7;
+			}
+			.jiuzhenren-msg{
+				background-color: white;
+				font-size: 0.24rem;
+				width: 6.1rem;
+				margin: 0 auto;
+			}
+			.height80{
+				height: 0.8rem;
+				line-height: 0.8rem;
+				margin: 0 0.05rem;
+				border-bottom: 0.01rem solid #E7E7E7;
+			}
+			.height92{
+				height: 0.92rem;
+				line-height: 0.92rem;
+				color: #c2c2c2;
+				text-align: center;
+			}
+			.font-grey{
+				color: #808080;
+				margin-left: 0.26rem;
+			}
+			.font-cyan{
+				color: #59bcb2;
+				margin-right: 0.36rem;
+			}
+			.btnDiv{
+				margin-top: 0.34rem;
+				text-align: center;
+				font-size: 0.24rem;
+			}
+			.delete-jiuzhenren{
+				height: 0.58rem;
+				line-height: 0.58rem;
+				width: 2.26rem;
+				border-radius: 0.1rem;
+				background-color: #df9577;
+				color: white;
+				margin-right: 0.56rem;
+			}
+			.moren-jiuzhenren{
+				height: 0.58rem;
+				line-height: 0.58rem;
+				width: 2.26rem;
+				border-radius: 0.1rem;
+				color: white;
+				background-color: #4db8ad;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<header>
+			<img src="img/left.png" class="leftP left"/>
+			<span>就诊人信息</span>
+			<img src="img/fangzi.png" class="fangzi right"/>
+		</header>
+		<div>
+			<div class="background">
+				<div class="jiuzhenren-msg">
+					<p class="height80"><span class="font-grey">姓名</span><span class="font-cyan right">*倩</span></p>
+					<p class="height80"><span class="font-grey">诊疗卡</span><span class="font-cyan right">46565656</span></p>
+					<p class="height80"><span class="font-grey">身份证号</span><span class="font-cyan right">44242*********565656</span></p>
+					<p class="height80"><span class="font-grey">手机号</span><span class="font-cyan right">135****665</span></p>
+					<p class="height92">
+						<input type="radio" name="sex" value="男" />
+						<span style="margin: 0 1.2rem 0 0.2rem;">男</span>
+						<input type="radio" name="sex" value="女" />
+						<span style="margin-left: 0.2rem;">女</span>
+					</p>
+				</div>
+				<div class="btnDiv">
+					<button class="delete-jiuzhenren">删除就诊人</button>
+					<button class="moren-jiuzhenren">已为默认就诊人</button>
+				</div>
+			</div>
+		</div>
+		
+		<footer>
+			<p>中国人民解放军第三〇三医院</p>
+			<p>服务热线：<span class="rexian">0771-2870303</span></p>
+		</footer>
+	</body>
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="icheck/icheck.min.js" type="text/javascript" charset="utf-8"></script>	
+	<script src="js/mobile.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$('input').iCheck({
+	    checkboxClass: 'icheckbox_flat-green',
+	    radioClass: 'iradio_flat-green',
+	    increaseArea: '20%' // optional
+	  });
+		
+	</script>
+</html>

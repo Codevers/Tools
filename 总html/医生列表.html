@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>医生列表</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<style type="text/css">
+			.shijian{
+				border-bottom: 0.01rem solid #BEBEBE;
+			}
+			.shijian>p{
+				margin: 0.24rem 0 0 0.36rem;
+				color: #737373;
+				font-size: 0.2rem;
+			}
+
+			.date section{
+				width: 0.4rem;
+				text-align: center;
+				font-size: 0.18rem;
+				display: inline-block;
+				color: #d8d8d8;
+				margin: 0.18rem 0.1rem 0.12rem;
+			}
+			.riqi{
+				padding: 0.06rem;
+				border-radius: 50%;
+			}
+			.jintian{
+				background-color: #4DB8AD;
+				color: white;	
+			}
+
+			.yishi>p{
+				border-bottom: 0.01rem solid #E7E7E7;
+				height: 1.04rem;
+				position: relative;
+			}
+			.ystxH{
+				position: absolute;
+				top: 0.18rem;
+				left: 0.52rem;
+			}
+			.zhulifang{
+				position: absolute;
+				top: 0.16rem;
+				left: 1.66rem;
+				font-size: 0.26rem;
+				color: #818181;
+			}
+			.zhuren-yishi{
+				position: absolute;
+				left: 1.66rem;
+				top: 0.58rem;
+				font-size: 0.22rem;
+				color: #8b8b8b;
+			}
+			.yigangyi{
+				position: absolute;
+				right: 0.88rem;
+				top: 0.32rem;
+				padding: 0.08rem 0.18rem;
+				color: white;
+				background-color: #4bb7aa;
+				font-size: 0.18rem;
+				border-radius: 0.05rem;
+			}
+			.rightP{
+				margin: 0.42rem 0.38rem 0 0;
+			}
+			.buke-guahao{
+				font-size: 0.2rem;
+				color: #898989;
+				position: absolute;
+				top: 0.4rem;
+				right: 0.46rem;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<header>
+			<img src="img/left.png" class="leftP left"/>
+			<span>神经内科</span>
+			<img src="img/fangzi.png" class="fangzi right"/>
+		</header>
+		<div>
+			<div class="shijian">
+				<p class="today-date"></p>
+				<div class="date">
+					<section class="today0"><p class="day"></p><p class="riqi"></p></section>
+					<section class="today"><p class="day"></p><p class="riqi jintian"></p></section>
+					<section class="today1"><p class="day"></p><p class="riqi"></p></section>
+					<section class="today2"><p class="day"></p><p class="riqi"></p></section>
+					<section class="today3"><p class="day"></p><p class="riqi"></p></section>
+					<section class="today4"><p class="day"></p><p class="riqi"></p></section>
+					<section class="today5"><p class="day"></p><p class="riqi"></p></section>
+					<section class="today6"><p class="day"></p><p class="riqi"></p></section>
+				</div>
+			</div>
+			
+			<div class="yishi">
+				<p>
+					<img src="img/ystxh.png" class="ystxH"/><span class="zhulifang">朱丽芳</span>
+					<span class="zhuren-yishi">主任医师</span><span class="yigangyi">1/1</span>
+					<img src="img/right.png" class="rightP right"/>
+				</p>
+				<p>
+					<img src="img/ystxh.png" class="ystxH"/><span class="zhulifang">刘大平</span>
+					<span class="zhuren-yishi">主任医师</span><span class="yigangyi">1/1</span>
+					<img src="img/right.png" class="rightP right"/>
+				</p>
+				<p>
+					<img src="img/ystxh.png" class="ystxH"/><span class="zhulifang">张至包</span>
+					<span class="zhuren-yishi">主任医师</span><span class="buke-guahao">不可挂号</span>
+				</p>
+				<p>
+					<img src="img/ystxh.png" class="ystxH"/><span class="zhulifang">张至包</span>
+					<span class="zhuren-yishi">主任医师</span><span class="buke-guahao">不可挂号</span>
+				</p>
+				<p>
+					<img src="img/ystxh.png" class="ystxH"/><span class="zhulifang">张至包</span>
+					<span class="zhuren-yishi">主任医师</span><span class="buke-guahao">不可挂号</span>
+				</p>
+				<p>
+					<img src="img/ystxh.png" class="ystxH"/><span class="zhulifang">张至包</span>
+					<span class="zhuren-yishi">主任医师</span><span class="buke-guahao">不可挂号</span>
+				</p>
+				<p>
+					<img src="img/ystxh.png" class="ystxH"/><span class="zhulifang">张至包</span>
+					<span class="zhuren-yishi">主任医师</span><span class="buke-guahao">不可挂号</span>
+				</p>
+				<p>
+					<img src="img/ystxh.png" class="ystxH"/><span class="zhulifang">张至包</span>
+					<span class="zhuren-yishi">主任医师</span><span class="buke-guahao">不可挂号</span>
+				</p>
+			</div>
+		</div>
+
+		<footer>
+			<p>中国人民解放军第三〇三医院</p>
+			<p>服务热线：<span class="rexian">0771-2870303</span></p>
+		</footer>
+	</body>
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mobile.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$(window).ready(function(){
+			
+			function getDate(n){
+				var now = new Date();
+				now.setTime(now.getTime() + 24*60*60*1000*n);
+				return now.getDate();
+			}
+			$('.today0 .riqi').html(getDate(-1));
+			$('.today .riqi').html(getDate(0));
+			$('.today1 .riqi').html(getDate(1));
+			$('.today2 .riqi').html(getDate(2));
+			$('.today3 .riqi').html(getDate(3));
+			$('.today4 .riqi').html(getDate(4));
+			$('.today5 .riqi').html(getDate(5));
+			$('.today6 .riqi').html(getDate(6));
+			
+			function getDay(n){
+				var now = new Date();
+				now.setTime(now.getTime() + 24*60*60*1000*n);
+				switch (now.getDay()){
+					case 0:
+						return '七'
+						break;
+					case 1:
+						return '一'
+						break;
+					case 2:
+						return '二'
+						break;
+					case 3:
+						return '三'
+						break;
+					case 4:
+						return '四'
+						break;
+					case 5:
+						return '五'
+						break;
+					case 6:
+						return '六'
+						break;
+					default:
+						break;
+				}
+			}
+			$('.today0 .day').html(getDay(-1));
+			$('.today .day').html(getDay(0));
+			$('.today1 .day').html(getDay(1));
+			$('.today2 .day').html(getDay(2));
+			$('.today3 .day').html(getDay(3));
+			$('.today4 .day').html(getDay(4));
+			$('.today5 .day').html(getDay(5));
+			$('.today6 .day').html(getDay(6));
+			
+			function today(){
+				var today = new Date();
+				return today.getFullYear()+'-'+today.getMonth()+1+'-'
+			}
+			function addZero(num){
+				if(num<10){
+					return '0'+num
+				}else{
+					return num
+				}
+			}
+			$('.today-date').html(today()+addZero($('.date>section .riqi.jintian').text()));
+			$('.date>section').click(function(){
+				$('.date>section .riqi').removeClass('jintian');
+				$(this).children('.riqi').addClass('jintian');
+				$('.today-date').html(today()+addZero($(this).children('.riqi').text()));
+			});
+			
+		});
+		
+	</script>
+</html>

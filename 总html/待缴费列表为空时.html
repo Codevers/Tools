@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<!--强制苹果全屏-->
+		<meta name="full-screen" content="yes">
+		<!--强制uc全屏-->
+		<meta name="x5-fulls/creen" content="true">
+		<!--强制qq全屏-->
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<title>待缴费列表为空时</title>
+		<style type="text/css">
+			
+			.main{
+				background-color: #F1F9F7;
+				height: calc(100% - 2.36rem);
+			}
+			.margin20{
+				width: 100%;
+				height: 0.2rem;
+			}
+			.jiuzhenren{
+				height: 1.2rem;
+				background-color: white;
+			}
+			.jiuzhenren>span{
+				color: #5A5A5A;
+				font-size: 0.24rem;	
+				margin-left: 0.4rem;
+			}
+			.jiuzhenren>div{
+				margin: 0.2rem 0.36rem 0 0;
+				font-size: 0.24rem;
+				color: #5bbbb2;
+				text-align: right;
+			}
+			
+			.wenjian-jia{
+				width: 2.7rem;
+				height: 2.7rem;
+				border-radius: 50%;
+				background-color: #D2D2D2;
+				margin: 0.8rem auto 0;
+				text-align: center;
+				line-height: 2.7rem;
+			}
+			
+			.baogao-tips{
+				font-size: 0.24rem;
+				color: #575a5a;
+				margin-top: 0.6rem;
+				text-align: center;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<header>
+			<img src="img/left.png" class="leftP left"/>
+			<span>待缴费列表</span>
+			<img src="img/fangzi.png" class="fangzi right"/>
+		</header>
+		
+		<div class="main">
+			<div class="margin20"></div>
+			<div class="jiuzhenren">
+				<span>就诊人</span>
+				<div class="right">
+					<p>马吉</p>
+					<p style="margin-top: 0.1rem;">90042251</p>	
+				</div>
+			</div>
+			
+			<div class="wenjian-jia">
+				<img src="img/wenjian.png" class="wenjian"/>
+			</div>
+			
+			<div class="baogao-tips">暂无待缴费的就诊项目</div>
+		</div>
+		
+		<footer>
+			<p>中国人民解放军第三〇三医院</p>
+			<p>服务热线：<span class="rexian">0771-2870303</span></p>
+		</footer>
+	</body>
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mobile.js" type="text/javascript" charset="utf-8"></script>
+</html>

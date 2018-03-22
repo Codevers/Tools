@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<!--强制苹果全屏-->
+		<meta name="full-screen" content="yes">
+		<!--强制uc全屏-->
+		<meta name="x5-fulls/creen" content="true">
+		<!--强制qq全屏-->
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="icheck/skins/flat/_all.css"/>
+		<link rel="stylesheet" type="text/css" href="icheck/skins/flat/green.css"/>
+		<title>添加就诊人</title>
+		<style type="text/css">
+			
+			.main{
+				background-color: #F1F9F7;
+				height: calc(100% - 0.96rem);
+			}
+			.margin20{
+				width: 100%;
+				height: 0.2rem;
+			}
+			
+			.jiuzhenren-msg{
+				background-color: white;
+				margin: 0rem 0.18rem;
+				font-size: 0.24rem;
+				color: #c2c2c2;
+			}
+			.jiuzhenren-msg>p{
+				height: 0.8rem;
+				line-height: 0.8rem;
+				margin: 0 0.2rem;
+				border-bottom: 1px solid #E7E7E7;
+				padding-left: 0.24rem;
+			}
+			.jiuzhenren-msg .idCard{
+				padding-left: 0.1rem;
+			}
+			.jiuzhenren-msg .bottom{
+				margin-left: 0.3rem;
+			}
+			.jiuzhenren-msg .shu-gang{
+				display: inline-block;
+				width: 1px;
+				height: 0.5rem;
+				background-color: #E7E7E7;
+				margin: 0 0.2rem 0 0.16rem;
+				position: relative;
+				top: 0.14rem;
+			}
+			.jiuzhenren-msg input{
+				width: 3rem;
+				background-color: transparent;
+			}
+			
+			.tianjia-jiuzhenka{
+				background-color: white;
+				margin: 0rem 0.18rem;
+				font-size: 0.24rem;
+				color: #c2c2c2;
+			}
+			.tianjia-jiuzhenka>p{
+				height: 0.7rem;
+				line-height: 0.7rem;
+			}
+			.panduan-jiuzhenka{
+				color: #818181;
+				margin: 0 0.2rem;
+				border-bottom: 1px solid #E7E7E7;
+				padding-left: 0.24rem;
+			}
+			.xuanze-jiuzhenka{
+				padding-left: 0.64rem;
+			}
+			.wuka{
+				background-color: #ebebeb;
+			}
+			.youka{
+				padding-left: 0.42rem;
+				display: none;
+			}
+			.jinggao{
+				color: #fd1f1c;
+				font-size: 0.24rem;
+				padding: 0 0.26rem 0 0.3rem;
+				margin: 0.2rem 0 0rem;
+				line-height: 0.4rem;
+			}
+			.jinggao .tanhao{
+				margin: 0 0.1rem 0.1rem 0;
+			}
+			
+			button.liji-bangding{
+				width: calc(100% - 0.4rem);
+				height: 0.6rem;
+				line-height: 0.6rem;
+				color: white;
+				background-color: #4DB8AD;
+				font-size: 0.24rem;
+				margin: 0 0.2rem;
+				text-align: center;
+				border-radius: 0.1rem;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<header>
+			<img src="img/left.png" class="leftP left"/>
+			<span>添加就诊人</span>
+			<img src="img/fangzi.png" class="fangzi right"/>
+		</header>
+		
+		<div class="main">
+			<div class="margin20"></div>
+			<div class="jiuzhenren-msg">
+				<p><input type="text" placeholder="真实姓名"/></p>
+				<p><img src="img/IDcard.png" class="idCard" alt="" /><img src="img/bottom.png" class="bottom"/><span class="shu-gang"></span><input type="text" placeholder="请输入身份证号码" /></p>
+				<p><input type="text" placeholder="手机号码"/></p>
+				<p style="border: none;padding-left: 0.48rem;">
+					<input type="radio" name="sex" value="男"/><span style="margin: 0 1.1rem 0 0.2rem;">男</span>
+					<input type="radio" name="sex" value="女"/><span style="margin-left: 0.2rem">女</span>
+				</p>
+			</div>
+			
+			<div class="margin20"></div>
+			<div class="tianjia-jiuzhenka">
+				<p class="panduan-jiuzhenka">您是否有就诊卡？</p>
+				<p class="xuanze-jiuzhenka">
+					<input type="checkbox" name="jiuzhenka" value="1" class="you"/><span style="margin: 0 1rem 0 0.2rem;">有就诊卡</span>
+					<input type="checkbox" name="jiuzhenka" value="0" class="wu" checked="true"/><span style="margin-left: 0.2rem;">无就诊卡</span>
+				</p>
+				<p class="wuka"></p>
+				<p class="youka"><input type="text" name="" value="" placeholder="请输入就诊卡号" /></p>
+			</div>
+			
+			<div class="jinggao">
+				<img src="img/tanhao.png" class="tanhao"/>本院实行实名制就诊，请如实填写就诊人信息，如因信息错误产生的一切后果自行负责！
+			</div>
+			<button class="liji-bangding">立即绑定</button>
+		</div>
+		
+		<footer>
+			<p>中国人民解放军第三〇三医院</p>
+			<p>服务热线：<span class="rexian">0771-2870303</span></p>
+		</footer>
+	</body>
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="icheck/icheck.min.js" type="text/javascript" charset="utf-8"></script>	
+	<script src="js/mobile.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			$('input').iCheck({
+		    checkboxClass: 'icheckbox_flat-green',
+		    radioClass: 'iradio_flat-green',
+		    increaseArea: '20%' // optional
+		  });
+		  
+		  $('.you').on('ifChecked',function(){
+				$('.wu').iCheck('uncheck');
+		  	$('.youka').show();
+		  	$('.wuka').hide();
+		  });
+		  
+		  $('.wu').on('ifChecked',function(){
+				$('.you').iCheck('uncheck');	
+		  	$('.wuka').show();
+		  	$('.youka').hide();
+		  });
+		  
+		});
+		
+		
+	</script>
+</html>

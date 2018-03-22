@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<title>科室列表</title>
+		<style type="text/css">
+			
+			.ke{
+				height: 0.8rem;
+				line-height: 0.8rem;
+				border-bottom: 1px solid #e7e7e7;
+				margin: 0 0.1rem 0 0.12rem;
+				font-size: 0.2rem;
+			}
+			.ke span{
+				color: #858585;
+				margin-left: 0.12rem;
+			}
+			.ke img.rightP{
+				margin: 0.34rem 0.12rem 0 0;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<header>
+			<img src="img/left.png" class="leftP left"/>
+			<span>科室介绍</span>
+			<img src="img/fangzi.png" class="fangzi right"/>
+		</header>
+		<div class="search">
+			<img src="img/fangdajingH.png" class="fangdajingH"/>
+			<input type="text" name="" id="" value="" placeholder="搜索科室" />
+		</div>
+		<div>
+			<p class="ke x X"><span>血液病科</span><img src="img/right.png" class="rightP right"/></p>
+			<p class="ke p P"><span>皮肤科</span><img src="img/right.png" class="rightP right"/></p>
+			<p class="ke e E"><span>儿科</span><img src="img/right.png" class="rightP right"/></p>
+			<p class="ke p P"><span>陪护中心</span><img src="img/right.png" class="rightP right"/></p>
+			<p class="ke s S"><span>神经内科</span><img src="img/right.png" class="rightP right"/></p>
+			<p class="ke k K"><span>康复科</span><img src="img/right.png" class="rightP right"/></p>
+			<p class="ke c C"><span>产科</span><img src="img/right.png" class="rightP right"/></p>
+			<p class="ke x X"><span>消化内科</span><img src="img/right.png" class="rightP right"/></p>
+			<p class="ke m M"><span>泌尿外科</span><img src="img/right.png" class="rightP right"/></p>
+			<p class="ke x X"><span>心血管内科</span><img src="img/right.png" class="rightP right"/></p>
+			<p class="ke f F"><span>妇科</span><img src="img/right.png" class="rightP right"/></p>
+		</div>
+		
+		
+		<footer>
+			<p>中国人民解放军第三〇三医院</p>
+			<p>服务热线：<span class="rexian">0771-2870303</span></p>
+		</footer>
+	</body>
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mobile.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$('.search input').change(function(){
+			$('.ke').hide();
+			var res = $(this).val();
+			if(res == ''){
+				$('.ke').show();
+			}else{
+				$('.ke.'+res).show();
+			}
+		});
+		
+	</script>
+</html>

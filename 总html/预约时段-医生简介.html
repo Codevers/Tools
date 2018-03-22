@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>预约时段-医生简介</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<style type="text/css">
+			
+			.doctor-introduce{
+				width: 100%;
+				height: 1.54rem;
+				position: relative;
+				background-color: white;
+			}
+			.ystxH{
+				margin: 0.26rem 0  0 0.4rem;
+			}
+			.zhulifang{
+				position: absolute;
+				font-size: 0.3rem;
+				color: #818181;
+				left: 1.7rem;
+				top: 0.32rem;
+			}
+			.zhuren-yishi{
+				font-size: 0.18rem;
+				position: absolute;
+				color: #848484;
+				top: 0.46rem;
+				left: 2.84rem;
+			}
+			.kangfu-yixueke{
+				font-size: 0.18rem;
+				position: absolute;
+				color: #b9b9b9;
+				left: 1.7rem;
+				top: 0.78rem;
+			}
+			.erweima{
+				position: absolute;
+				top: 0.34rem;
+				right: 0.39rem;
+				z-index: 2;
+			}
+			.lvborder{
+				position: absolute;
+				top: 0.24rem;
+				right: 0.28rem;
+			}
+			.yuyueshiduan-jieshao{
+				font-size: 0.24rem;
+				color: #606060;
+				border-bottom: 0.02rem solid #DFDFDF;
+				padding-bottom: 0.15rem;
+				background-color: white;
+			}
+			.active{
+				color: #0ad0be;
+				border-bottom: 0.06rem solid #0ad0be;
+			}
+			.yuyueshiduan{
+				padding: 0 0.16rem 0.14rem;
+				margin-left: 1.1rem;
+			}
+			.jieshao{
+				padding: 0 0.3rem 0.14rem;
+				margin-left: 1.3rem;
+			}
+			.yuyue-shiduan{
+				/*padding-bottom: 0.2rem;*/
+				background-color: white;
+			}
+			.date{
+				border-bottom: 0.01rem solid #bebebe;
+			}
+			.date section{
+				width: 0.4rem;
+				text-align: center;
+				font-size: 0.18rem;
+				display: inline-block;
+				color: #d8d8d8;
+				margin: 0.18rem 0.1rem 0.12rem;
+			}
+			.riqi{
+				padding: 0.06rem;
+				border-radius: 50%;
+			}
+			.jintian{
+				background-color: #4DB8AD;
+				color: white;	
+			}
+			
+			.keguahao>p{
+				height: 1.1rem;
+				border-bottom: 0.01rem solid #DFDFDF;
+				position: relative;
+			}
+			.ke-guahao{
+				font-size: 0.2rem;
+				color: #1e9f93;
+				padding: 0.28rem 0.14rem;
+				position: absolute;
+				left: 0.46rem;
+				top: 0.1rem;
+				border: 0.02rem solid #1E9F93;
+				border-radius: 50%;
+			}
+			.shijian{
+				font-size: 0.22rem;
+				color: #797979;
+				position: absolute;
+				left: 1.66rem;
+				top: 0.38rem;
+			}
+			.yuan{
+				color: white;
+				background-color: #f38016;
+				position: absolute;
+				right: 0.72rem;
+				top: 0.32rem;
+				padding: 0.06rem 0.12rem;
+				font-size: 0.22rem;
+				border-radius: 0.05rem;
+			}
+			.rightP{
+				margin: 0.42rem 0.4rem 0 0;
+			}
+			
+			.jie-shao{
+				font-size: 0.22rem;
+				color: #adadad;
+				padding-bottom: 0.3rem;
+				line-height: 0.34rem;
+				background-color: white;
+			}
+			.shanchang{
+				padding: 0.28rem 0.36rem 0.36rem 0.36rem;
+				border-bottom: 0.01rem solid #DFDFDF;
+			}
+			.jianjie{
+				padding: 0.28rem 0.36rem 0.36rem 0.36rem;
+				border-bottom: 0.01rem solid #DFDFDF;
+			}
+			
+		</style>
+	</head>
+	<body style="background-color: #F1F9F7;">
+		<header>
+			<img src="img/left.png" class="leftP left"/>
+			<span>医生介绍</span>
+			<img src="img/fangzi.png" class="fangzi right"/>
+		</header>
+		
+		<div>
+			<div class="doctor-introduce">
+				<img src="img/ystxh.png" class="ystxH left"/>
+				<span class="zhulifang">朱丽芳</span><span class="zhuren-yishi">主任医师</span>
+				<span class="kangfu-yixueke">康复医学科</span>
+				<img src="img/erweima.png" class="erweima"/>
+				<img src="img/lvborder.png" class="lvborder"/>
+			</div>
+			
+			<div class="yuyueshiduan-jieshao">
+				<span class="yuyueshiduan active">预约时段</span>
+				<span class="jieshao">介绍</span>
+			</div>
+			
+			<div class="yuyue-shiduan">
+				<div class="date">
+					<section class="today0"><p class="day"></p><p class="riqi"></p></section>
+					<section class="today"><p class="day"></p><p class="riqi jintian"></p></section>
+					<section class="today1"><p class="day"></p><p class="riqi"></p></section>
+					<section class="today2"><p class="day"></p><p class="riqi"></p></section>
+					<section class="today3"><p class="day"></p><p class="riqi"></p></section>
+					<section class="today4"><p class="day"></p><p class="riqi"></p></section>
+					<section class="today5"><p class="day"></p><p class="riqi"></p></section>
+					<section class="today6"><p class="day"></p><p class="riqi"></p></section>
+				</div>
+				<div class="keguahao">
+					<p><span class="ke-guahao">可挂号</span><span class="shijian">14:30</span><span class="yuan">30.0元</span>
+						<img src="img/right.png" class="rightP right"/>
+					</p>
+					<p><span class="ke-guahao">可挂号</span><span class="shijian">15:30</span><span class="yuan">30.0元</span>
+						<img src="img/right.png" class="rightP right"/>
+					</p>
+					<p><span class="ke-guahao">可挂号</span><span class="shijian">15:45</span><span class="yuan">30.0元</span>
+						<img src="img/right.png" class="rightP right"/>
+					</p>
+					<p><span class="ke-guahao">可挂号</span><span class="shijian">15:50</span><span class="yuan">30.0元</span>
+						<img src="img/right.png" class="rightP right"/>
+					</p>
+					<p><span class="ke-guahao">可挂号</span><span class="shijian">16:00</span><span class="yuan">30.0元</span>
+						<img src="img/right.png" class="rightP right"/>
+					</p>
+					<p><span class="ke-guahao">可挂号</span><span class="shijian">16:20</span><span class="yuan">30.0元</span>
+						<img src="img/right.png" class="rightP right"/>
+					</p>
+				</div>
+			</div>
+			
+			<div class="jie-shao" style="display: none;">
+				<div class="shanchang">
+					<p style="color: #25d3c2;">擅长</p>
+					<p>脑卒中后偏瘫、颅脑损伤后瘫痪、脊髓损伤截瘫；骨与关节损伤、神经损伤等康复及颈肩腰腿痛治疗；对小儿咳嗽、外感咳嗽、慢性肠炎、盆腔炎、前列腺炎、泌尿系结石等治疗有独特之处。</p>
+				</div>
+				<div class="jianjie">
+					<p style="color: #25d3c2;">简介</p>
+					<p>康复医学科主任、主任医师，擅长脑卒中后偏瘫、颅脑损伤后瘫痪、脊髓损伤截瘫；骨与关节损伤、神经损伤等康复及颈肩腰腿痛治疗；对小儿咳嗽、外感咳嗽、慢性肠炎、盆腔炎、前列腺炎、泌尿系结石等治疗有独特之处。</p>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<p>中国人民解放军第三〇三医院</p>
+			<p>服务热线：<span class="rexian">0771-2870303</span></p>
+		</footer>
+	</body>
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mobile.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			$('.yuyueshiduan').click(function(){
+				$(this).addClass('active');
+				$('.jieshao').removeClass('active');
+				$('.yuyue-shiduan').show();
+				$('.jie-shao').hide();
+			});
+			
+			$('.jieshao').click(function(){
+				$(this).addClass('active');
+				$('.yuyueshiduan').removeClass('active');
+				$('.jie-shao').show();
+				$('.yuyue-shiduan').hide();
+			});
+			
+			function getDate(n){
+				var now = new Date();
+				now.setTime(now.getTime() + 24*60*60*1000*n);
+				return now.getDate();
+			}
+			$('.today0 .riqi').html(getDate(-1));
+			$('.today .riqi').html(getDate(0));
+			$('.today1 .riqi').html(getDate(1));
+			$('.today2 .riqi').html(getDate(2));
+			$('.today3 .riqi').html(getDate(3));
+			$('.today4 .riqi').html(getDate(4));
+			$('.today5 .riqi').html(getDate(5));
+			$('.today6 .riqi').html(getDate(6));
+			
+			function getDay(n){
+				var now = new Date();
+				now.setTime(now.getTime() + 24*60*60*1000*n);
+				switch (now.getDay()){
+					case 0:
+						return '七'
+						break;
+					case 1:
+						return '一'
+						break;
+					case 2:
+						return '二'
+						break;
+					case 3:
+						return '三'
+						break;
+					case 4:
+						return '四'
+						break;
+					case 5:
+						return '五'
+						break;
+					case 6:
+						return '六'
+						break;
+					default:
+						break;
+				}
+			}
+			$('.today0 .day').html(getDay(-1));
+			$('.today .day').html(getDay(0));
+			$('.today1 .day').html(getDay(1));
+			$('.today2 .day').html(getDay(2));
+			$('.today3 .day').html(getDay(3));
+			$('.today4 .day').html(getDay(4));
+			$('.today5 .day').html(getDay(5));
+			$('.today6 .day').html(getDay(6));
+			
+//			$('.jintian').css({
+//				'background-color':'#4DB8AD',
+//				'color':'white'
+//			});
+			$('.date>section').click(function(){
+				$('.date>section .riqi').removeClass('jintian');
+				$(this).children('.riqi').addClass('jintian');
+			});
+			
+		});
+		
+		
+	</script>
+</html>

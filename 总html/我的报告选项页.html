@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<!--强制苹果全屏-->
+		<meta name="full-screen" content="yes">
+		<!--强制uc全屏-->
+		<meta name="x5-fulls/creen" content="true">
+		<!--强制qq全屏-->
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
+		<title>我的报告选项页</title>
+		<style type="text/css">
+			
+			.main{
+				height: calc(100% - 0.96rem);
+				background-color: #F1F9F7;
+			}
+			.margin40{
+				width: 100%;
+				height: 0.4rem;
+			}
+			
+			.baogao-list{
+				background-color: white;
+			}	
+			.baogao-xiangqing{
+				height: 0.8rem;
+				margin: 0 0.12rem;
+				border-bottom: 0.01rem solid #E7E7E7;
+				position: relative;
+			}
+			img.orangeBlock{
+				margin: 0.2rem 0 0 -0.12rem;
+			}
+			.baogao{
+				color: #818181;
+				font-size: 0.24rem;
+				position: absolute;
+				top: 0.2rem;
+				left: 0.32rem;
+			}
+			img.rightBlock{
+				margin: 0.3rem 0.36rem 0 0;
+			}
+			
+			.name-time{
+				height: 0.8rem;
+				font-size: 0.22rem;
+			}
+			.name{
+				color: #9e9e9e;
+				margin: 0.2rem 0 0 0.4rem;
+			}
+			.time{
+				color: #888888;
+				margin: 0.2rem 0.46rem 0 0;
+			}
+			/*新增时间框*/
+			.start-time,.end-time{
+				font-size: 0.24rem;
+				color: #848989;
+				padding-left: 0.25rem;
+				height: 0.8rem;
+			}
+			.date-timepicker{
+				width: 3.4rem;
+				height: 0.58rem;
+				margin-left: 0.2rem;
+			}
+			button.chaxun{
+				width: 1rem;
+				height: 0.6rem;
+				color: white;
+				background-color: #4db8ad;
+				font-size: 0.26rem;
+				border-radius: 0.06rem;
+				margin-left: 0.3rem;
+
+			}
+			
+		</style>
+	</head>
+	<body>
+		<header>
+			<img src="img/left.png" class="leftP left"/>
+			<span>我的报告</span>
+			<img src="img/fangzi.png" class="fangzi right"/>
+		</header>
+		
+		<div class="main">
+			<div class="margin40"></div>
+			<p class="start-time">开始时间<input type="text" class="date-timepicker" /></p>
+			<p class="end-time">结束时间<input type="text" class="date-timepicker" /><button class="chaxun">查询</button></p>
+
+			<section class="baogao-list">
+				<div class="baogao-xiangqing">
+					<img src="img/orangeBlock.png" class="orangeBlock left"/>
+					<span class="baogao">超敏C反应蛋白+血细...</span>
+					<img src="img/rightBlock.png" alt="" class="rightBlock right" />
+				</div>
+				<div class="name-time">
+					<span class="name left">杨果果</span>
+					<span class="time right">2017-02-03 15:13:52</p>
+				</div>
+			</section>
+			
+		</div>
+
+		<footer>
+			<p>中国人民解放军第三〇三医院</p>
+			<p>服务热线：<span class="rexian">0771-2870303</span></p>
+		</footer>
+	</body>
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mobile.js" type="text/javascript" charset="utf-8"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+	<script type="text/javascript">
+		
+		$('.baogao-xiangqing').on('click',function(){
+			location.href = "我的报告-详细页.html";
+		});
+		
+		$('.date-timepicker').datetimepicker({
+		  format: 'yyyy-mm-dd hh:ii',
+		  language:  'zh-CN',  
+			weekStart: 1,
+			todayBtn:  1,
+			autoclose: 1,
+			todayHighlight: 1,
+			startView: 2,
+			minView: 2,
+			forceParse: 0
+		});
+		
+	</script>
+</html>
